@@ -317,6 +317,7 @@ async def run_bot():
                         # ── ticker update ────────────────────────────
                         if mtype == "ticker":
                             msg = data.get("msg", {})
+                            log.info(f"TICK {ticker} ask={yes_ask} bid={yes_bid}")
                             ticker = msg.get("market_ticker", "")
                             yes_ask = float(msg.get("yes_ask_dollars") or 0)
                             yes_bid = float(msg.get("yes_bid_dollars") or 0)
